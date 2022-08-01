@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from django.db import connection
 
 # Create your views here.
-def home(request):
+def view(request):
     # return HttpResponse("<h1>Hello World</h1>")
     cursor=connection.cursor()
     cursor.execute("SELECT * from products ")
