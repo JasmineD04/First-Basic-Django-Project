@@ -12,7 +12,7 @@
 <body>
     <div class="maintable">
         <table class="table table-bordered table-info">
-            <thead class="table-dark">
+            <!-- <thead class="table-dark"> -->
                 <tr>
                     <th scope="col">Name</th>
                     <th scope="col">Summary</th>
@@ -20,7 +20,7 @@
                     <th scope="col">Price</th>
                 </tr>
             </thead>
-            <tbody>
+            <!-- <tbody> -->
                 {% for products in keyposts %}
                 <tr>
                     <td>{{products.name}}</td>
@@ -29,8 +29,11 @@
                     <td>{{products.price}}</td>
                 </tr>
                 {% endfor %}
-            </tbody>
+            <!-- </tbody> -->
         </table>
+        <div>
+            <a href="{% url 'create' %}" class="btn btn-primary">ADD PRODUCTS</a>
+        </div>
     </div>
 
 </body>
