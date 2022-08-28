@@ -12,29 +12,13 @@
     <title>Document</title>
 </head>
 <body>
+    <h1>J's SUPER MART</h1>
     <nav>
-        <div class="navbar navbar-expand-md bg-steel">
-            <div class="container">
-                <a href="" class="navbar-brand mx-3">
-                    Products
-                </a>
-            <button class="navbar-toggler bg-light mx-3" data-bs-toggle="collapse" data-bs-target="#nav"><span class="navbar-toggler-icon"></span></button>
-            <div class=" collapse navbar-collapse row" id="nav">
-                <ul class="navbar-nav col-md-8">
-                    <li><a class="nav-link " href="">Home</a></li>
-                    <li><a class="nav-link" href="">About</a></li>
-                    <li><a class="nav-link" href="">Contact</a></li>
-                </ul>
-                <ul class="navbar-nav col-md-4">
-                    <li><a class="nav-link" href="#">Login</a></li>
-              <li>
-                <a class="nav-link" href="#">Register</a>
-              </li>
-
-                </ul>
-    
-            </div>
-            </div>
+        <div class="navbar navbar-expand-md bg-dark">
+            <ul class="navbar-nav">
+                <li><a href="{% url 'view' %}" class="nav-link text-light text-uppercase fw-bold mx-3">Products</a></li>
+                <li><a href="" class="nav-link text-light text-uppercase fw-bold mx-3" href="">Categories</a></li>
+            </ul>
         </div>
     </nav>
     
@@ -66,7 +50,7 @@
                             name="size" value="{{ keyposts.size }}">
                     <label for="productPrize" class="form-label">Price</label>
                         <input type="text" class="form-control" id="productPrize" 
-                        name="prize" value="{{ keyposts.size }}">
+                        name="prize" value="{{ keyposts.prize }}">
                       <input type="hidden" class="form-control" id="id" 
                         value="{{ keyposts.id }}" name="id">
                       <button type="submit" class="btn btn-primary">Submit</button>
