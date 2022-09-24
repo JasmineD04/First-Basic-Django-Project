@@ -1,0 +1,17 @@
+{% extends 'productsapp/base.html' %}
+{% load static %}
+
+{% block content %}
+    <form action="{% url 'addcat' %}" method="POST">
+        {% csrf_token %}
+        <fieldset>
+            <legend>Add Categories</legend>
+            <div>
+                <label for="catname" class="form-control">Category Name</label>
+                <input type="text" class="form-control" id="catname" name="catname">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </fieldset>
+    </form>
+</div>
+{% endblock %}
