@@ -21,4 +21,5 @@ urlpatterns = [
     path('products/', include('productsapp.urls')),
     path('home/', include('productsapp.urls')),
     path('view/',include('productsapp.urls')),
+    path('addtocart/',include('productsapp.urls')),
 ]

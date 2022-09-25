@@ -2,12 +2,11 @@
 {% load static %}
 
 {% block content %}
-{{keyposts}}
+<!-- {{keyposts}} -->
    <div class="maintable">
         <table class="table table-bordered table-info">
             <thead class="table-dark">
                 <tr>
-                    <th>Id</th>
                     <th scope="col">Name</th>
                     <th scope="col">Summary</th>
                     <th scope="col">Color</th>
@@ -21,7 +20,6 @@
             <tbody>
                 {% for product in keyposts %}
                 <tr>
-                    <td>{{product.id}}</td>
                     <td>{{product.name}}</td>
                     <td>{{product.summary}}</td>
                     <td>{{product.color}}</td>
@@ -29,7 +27,9 @@
                     <td>{{product.prize}}</td>
                     <td><a href="{% url 'edit' pk=product.id %}"class="btn btn-warning">Edit</a></td>
                     <td><a href="{% url 'delete' pk=product.id %}" class="btn btn-warning">Delete</a></td>
-                    <td><a href="{% url 'addtocart' pk=user.id pd=product.id%}" class="btn btn-warning">Add</a></td>
+                    <td>
+                        <a href="{% url 'addtocart' pk=user.id pd=product.id%}" class="btn btn-warning">Add</a>
+                    </td>
                 </tr>
                 {% endfor %}
             </tbody>

@@ -1,0 +1,33 @@
+{% extends 'productsapp/base.html' %}
+{% load static %}
+
+{% block content %}
+<div>
+    <!-- {{keyposts}} -->
+    <div class="maintable">
+        <table class="table table-bordered table-info">
+            <thead class="table-dark">
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Summary</th>
+                    <th scope="col">Color</th>
+                    <th>Size</th>
+                    <th scope="col">Price</th>
+                    <!-- <th scope="col">Remove</th> -->
+                </tr>
+            </thead>
+            <tbody>
+                {% for product in keyposts %}
+                <tr>
+                    <td>{{product.name}}</td>
+                    <td>{{product.summary}}</td>
+                    <td>{{product.color}}</td>
+                    <td>{{product.size}}</td>
+                    <td>{{product.prize}}</td>
+                  
+                </tr>
+                {% endfor %}
+            </tbody>    
+    </div>
+</div>
+{% endblock %}

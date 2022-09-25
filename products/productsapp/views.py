@@ -124,11 +124,22 @@ def register(request):
     return render(request,'productsapp/register.html', context)
 
 def addtocart(request,pk,pd):
-    print(pk)
     cursor=connection.cursor()
     cursor.execute(f"INSERT INTO cart (`prid`,`uid`) VALUES (%s,%s)",(pd,pk))
-    return render(request,'productsapp/register.html')
+    return redirect(f'/products/viewcart/{pk}')
+
+def viewcart(request,pk):
+    cursor=connection.cursor()
+    cursor.execute(f"SELECT p.id,p.name,p.summary,p.color,p.size,p.prize from product as p INNER JOIN cart on p.id= cart.prid where uid={pk}")
+    columns = [col[0] for col in cursor.description]
+    posts =  [
+        dict(zip(columns, row))
+        for row in cursor.fetchall()
+    ]
+    context={
+        'keyposts':posts,
+    }
+    print(posts)
+    return render(request,'productsapp/viewcart.html',context)
 
 
-# def viewcart(request):
-    

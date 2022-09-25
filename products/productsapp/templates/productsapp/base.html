@@ -13,13 +13,13 @@
     <title>Main</title>
 </head>
 <body>
-    <h1>J's SUPER MART</h1>
+    <h1 style="text-align: center;">J's SUPER MART</h1>
     <nav>
         <div class="navbar navbar-expand-md bg-dark">
             <ul class="navbar-nav">
                 <li><a href="{% url 'view-prod' %}" class="nav-link text-light text-uppercase fw-bold mx-3">Products</a></li>
                 <li><a href="{% url 'viewcategories' %}" class="nav-link text-light text-uppercase fw-bold mx-3" href="">Categories</a></li>
-                <li><a class="nav-link text-light text-uppercase fw-bold mx-3" href="{% url 'viewcategories' %}">View Cart</a></li>
+                <li><a class="nav-link text-light text-uppercase fw-bold mx-3" href="{% url 'viewcart' pk=user.id %}">View Cart</a></li>
                 
             </ul>
         </div>
